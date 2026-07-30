@@ -117,6 +117,7 @@ The CSS includes comprehensive print styles:
 - **pug-cli** ^1.0.0-alpha6 — CLI tool for Pug (dev dependency)
 
   Video Links:
+  https://drive.google.com/file/d/1Ssoa1rOb9vi_iQZLd3Q_k7saYkWsqD5Z/view?usp=sharing
   
 
 ## 📄 License
