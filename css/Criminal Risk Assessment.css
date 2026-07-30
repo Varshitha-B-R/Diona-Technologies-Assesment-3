@@ -1,0 +1,1507 @@
+/*==================================================
+  RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    background:#d9d9d9;
+    font-family:"Times New Roman", Times, serif;
+    color:#000;
+    font-size:11pt;
+    line-height:1.3;
+}
+
+/*==================================================
+  PAGE
+==================================================*/
+
+.page{
+
+    width:210mm;
+    min-height:297mm;
+
+    margin:20px auto;
+    padding:12mm 14mm 18mm;
+
+    background:#fff;
+
+    position:relative;
+
+    page-break-after:always;
+
+    overflow:hidden;
+
+}
+
+.page:last-child{
+
+    page-break-after:auto;
+
+}
+
+/*==================================================
+  TYPOGRAPHY
+==================================================*/
+
+h1,
+h2,
+h3,
+h4{
+
+    font-weight:bold;
+
+}
+
+h3{
+
+    font-size:13pt;
+
+    margin:10px 0 8px;
+
+    text-transform:uppercase;
+
+}
+
+p{
+
+    margin-bottom:7px;
+
+    text-align:justify;
+
+    font-size:10.5pt;
+
+}
+
+strong{
+
+    font-weight:700;
+
+}
+
+/*==================================================
+  HEADER
+==================================================*/
+
+.page-header{
+
+    margin-bottom:10px;
+
+}
+
+.header-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+.logo{
+
+    width:72px;
+
+    flex-shrink:0;
+
+}
+
+.logo img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.title{
+
+    flex:1;
+
+    text-align:center;
+
+    margin-left:180px;
+    margin-top:20px;
+
+}
+
+.title h1{
+
+    font-size:20pt;
+
+    letter-spacing:.3px;
+
+    text-transform:uppercase;
+
+}
+
+.title h2{
+
+    font-size:18pt;
+
+    margin-top:2px;
+
+    text-transform:uppercase;
+
+}
+
+.department{
+
+    margin-top:8px;
+
+}
+
+.department p{
+
+    margin:2px 0;
+
+    font-size:10pt;
+
+    text-align:left;
+
+}
+
+.header-info{
+
+    margin-top:10px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    font-size:10pt;
+
+}
+
+.header-info .left{
+
+    font-weight:bold;
+
+}
+
+.header-info .right{
+
+    text-align:right;
+
+}
+
+/*==================================================
+  PAGE TITLE
+==================================================*/
+
+.print-title{
+
+    margin-top:12px;
+
+    margin-bottom:8px;
+
+    font-size:12pt;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+}
+
+/*==================================================
+  FOOTER
+==================================================*/
+
+.page-footer{
+
+    position:absolute;
+
+    left:14mm;
+
+    right:14mm;
+
+    bottom:10mm;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:10pt;
+
+}
+
+.footer-left{
+
+    width:30%;
+
+    text-align:left;
+
+}
+
+.footer-center{
+
+    width:40%;
+
+    text-align:center;
+
+}
+
+.footer-right{
+
+    width:30%;
+
+    text-align:right;
+
+}
+
+/*==================================================
+  GENERIC WRITING LINE
+==================================================*/
+
+.line{
+
+    display:block;
+
+    width:100%;
+
+    height:18px;
+
+    border-bottom:1px solid #000;
+
+}
+
+/*==================================================
+  CHECKBOX
+==================================================*/
+
+input[type="checkbox"]{
+
+    width:12px;
+
+    height:12px;
+
+    vertical-align:end;
+   position: relative;
+    left: 5px;
+    bottom: 5px;
+
+}
+
+/*==================================================
+  PRINT
+==================================================*/
+
+@page{
+
+    size:A4;
+
+    margin:10mm;
+
+}
+
+@media print{
+
+    body{
+
+        background:#fff;
+
+    }
+
+    .page{
+
+        margin:0;
+
+        width:210mm;
+
+        min-height:297mm;
+
+        box-shadow:none;
+
+        page-break-after:always;
+
+    }
+
+    .page:last-child{
+
+        page-break-after:auto;
+
+    }
+
+}
+/*==================================================
+  CONSENT SECTION
+==================================================*/
+
+.consent-section{
+
+    border:1px solid #000;
+
+    padding:8px 10px;
+
+    margin-bottom:14px;
+
+}
+
+.consent-section h3{
+
+    text-align:center;
+
+    font-size:12pt;
+
+    margin-bottom:10px;
+
+}
+
+.consent-section p{
+
+    font-size:10pt;
+
+    line-height:1.35;
+
+    margin-bottom:8px;
+
+    text-align:justify;
+
+}
+
+/*==================================================
+  SIGNATURE TABLE
+==================================================*/
+
+.signature-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:12px;
+
+}
+
+.signature-table td{
+
+    padding:6px 4px;
+
+    vertical-align:bottom;
+
+    border:none;
+
+}
+
+.signature-table .label{
+
+    white-space:nowrap;
+
+    font-weight:bold;
+
+    width:18%;
+
+}
+
+.signature-table .line{
+
+    border-bottom:1px solid #000;
+
+    height:22px;
+
+    width:auto;
+
+}
+
+.signature-table tr:first-child td{
+
+    padding-bottom:14px;
+
+}
+
+/*==================================================
+  PERSONAL INFORMATION
+==================================================*/
+
+.personal-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+    margin-top:8px;
+
+}
+
+.personal-table tr{
+
+    height:30px;
+
+}
+
+.personal-table td{
+
+    border:none;
+
+    padding:5px 4px;
+
+    vertical-align:bottom;
+
+    font-size:10pt;
+
+}
+
+/* Numbers */
+
+.personal-table .num{
+
+    width:4%;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+/* Labels */
+
+.personal-table .label{
+
+    width:18%;
+
+    white-space:nowrap;
+
+    font-weight:bold;
+
+}
+
+/* Day Month Year */
+
+.personal-table .small{
+
+    width:7%;
+
+    text-align:center;
+
+    font-size:9pt;
+
+    font-weight:normal;
+
+}
+
+/* Checkbox column */
+
+.personal-table .checkbox{
+
+    width:4%;
+
+    text-align:center;
+
+}
+
+/* Writing fields */
+
+.personal-table td.line{
+
+    border-bottom:1px solid #000;
+
+    height:22px;
+
+}
+.personal-table td.line input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+/* Slightly longer writing fields */
+
+.personal-table td.line[colspan="2"]{
+
+    width:100px;
+
+}
+td.line[colspan="2"] input,input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.personal-table td.line[colspan="3"]{
+
+    width:150px;
+
+}
+td.line[colspan="3"] input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.personal-table td.line[colspan="7"]{
+    position:absolute;
+    right: 100px;
+    width:280px;
+
+}
+td.line[colspan="7"] input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.second-name {
+    position: relative;
+    left: 130px;
+}
+/* Row spacing */
+
+.personal-table tr:nth-child(1){
+
+    height:34px;
+
+}
+
+.personal-table tr:nth-child(2){
+
+    height:32px;
+
+}
+
+.personal-table tr:nth-child(3){
+
+    height:36px;
+
+}
+
+.personal-table tr:nth-child(n+4){
+
+    height:32px;
+
+}
+/*==================================================
+  IDENTIFICATION SECTION
+==================================================*/
+
+.identification{
+
+    margin-top:14px;
+
+}
+
+.note{
+
+    font-size:10pt;
+
+    margin-bottom:10px;
+
+    line-height:1.35;
+
+}
+
+.note strong{
+
+    font-weight:bold;
+
+}
+
+/*==================================================
+  IDENTIFICATION TABLE
+==================================================*/
+
+.identification-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin:8px 0 14px;
+
+}
+
+.identification-table td{
+
+    width:25%;
+
+    border:none;
+
+    padding:6px 4px;
+
+    vertical-align:middle;
+
+}
+
+.identification-table label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-size:10pt;
+
+    cursor:pointer;
+
+}
+
+.identification-table input[type="checkbox"]{
+
+    width:13px;
+
+    height:13px;
+
+    margin:0;
+
+}
+
+/*==================================================
+  OTHER ID
+==================================================*/
+
+.other-id-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-bottom:12px;
+
+}
+
+.other-id-table td{
+
+    border:none;
+
+    padding:6px 4px;
+
+    vertical-align:bottom;
+
+}
+
+.other-id-table .label{
+
+    width:180px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+}
+
+.other-id-table .line{
+
+    border-bottom:1px solid #000;
+
+    height:22px;
+
+    width:auto;
+
+}
+
+/*==================================================
+  DRIVER'S LICENCE
+==================================================*/
+
+.licence-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.licence-table td{
+
+    border:none;
+
+    padding:6px 4px;
+
+    vertical-align:bottom;
+
+}
+
+.licence-table .label{
+
+    width:320px;
+
+    font-weight:bold;
+
+    line-height:1.3;
+
+}
+
+.licence-table .line{
+
+    border-bottom:1px solid #000;
+
+    height:22px;
+
+    width:auto;
+
+}
+
+/*==================================================
+  SPACING
+==================================================*/
+
+.identification-table,
+.other-id-table,
+.licence-table{
+
+    page-break-inside:avoid;
+
+}
+
+.identification-table tr,
+.other-id-table tr,
+.licence-table tr{
+
+    height:30px;
+
+}
+
+/*==================================================
+  PAGE 2
+==================================================*/
+
+/*------------------------------------
+  NAME TABLE
+------------------------------------*/
+
+.name-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-bottom:4px;
+
+}
+
+.name-table td{
+
+    border:none;
+
+    padding:6px 4px;
+
+    vertical-align:bottom;
+
+}
+
+.name-table .label{
+
+    width:260px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+}
+
+.name-table .line{
+
+    border-bottom:1px solid #000;
+
+    height:22px;
+
+}
+
+/*------------------------------------
+  SMALL NOTE
+------------------------------------*/
+
+.small-note{
+
+    font-size:9pt;
+
+    margin-bottom:12px;
+
+    font-style:italic;
+
+}
+
+/*------------------------------------
+  NOTICE
+------------------------------------*/
+
+.notice{
+
+    margin-bottom:16px;
+
+}
+
+.notice p{
+
+    font-size:10pt;
+
+    line-height:1.4;
+
+    margin-bottom:8px;
+
+    text-align:justify;
+
+}
+
+.notice p:first-child{
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+}
+
+/*------------------------------------
+  REQUIRED NOTE
+------------------------------------*/
+
+.required-note{
+
+    margin:16px 0 12px;
+
+    font-size:11pt;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+/*==================================================
+  AGENCY TABLE
+==================================================*/
+
+.agency-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    table-layout:fixed;
+
+}
+
+.agency-table tr{
+
+    height:30px;
+
+}
+
+.agency-table td{
+
+    border:none;
+
+    padding:6px 4px;
+
+    vertical-align:bottom;
+
+}
+
+.agency-table .label{
+
+    width:40%;
+
+    font-weight:bold;
+
+    white-space:normal;
+
+}
+
+.agency-table .line{
+
+    border-bottom:1px solid #000;
+
+    height:22px;
+
+    width:auto;
+
+}
+
+/*==================================================
+  CHECKBOX ROWS
+==================================================*/
+
+.checkbox-row{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin:4px 0;
+
+}
+
+.checkbox-row label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    font-size:10pt;
+
+}
+
+.checkbox-row input[type="checkbox"]{
+
+    width:13px;
+
+    height:13px;
+
+    margin:0;
+
+}
+
+/*==================================================
+  FINAL NOTE
+==================================================*/
+
+.final-note{
+
+    margin-top:18px;
+
+    padding-top:10px;
+
+}
+
+.final-note p{
+
+    font-size:10pt;
+
+    line-height:1.35;
+
+    text-align:justify;
+
+}
+
+/*==================================================
+  FOOTER
+==================================================*/
+
+.page-footer{
+
+    position:absolute;
+
+    left:14mm;
+
+    right:14mm;
+
+    bottom:10mm;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:9pt;
+
+}
+
+.footer-left{
+
+    text-align:left;
+
+}
+
+.footer-center{
+
+    text-align:center;
+
+}
+
+.footer-right{
+
+    text-align:right;
+
+}
+
+/*==================================================
+  PREVENT PAGE BREAKS
+==================================================*/
+
+.signature-table,
+.personal-table,
+.identification-table,
+.other-id-table,
+.licence-table,
+.name-table,
+.agency-table{
+
+    page-break-inside:avoid;
+
+}
+
+.consent-section,
+.identification,
+.notice,
+.final-note{
+
+    page-break-inside:avoid;
+
+}
+/*==================================================
+  FINAL REFINEMENTS
+==================================================*/
+
+/* Remove all table borders */
+
+table,
+tr,
+td,
+th{
+    border:none;
+}
+
+/* Standard table spacing */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+td{
+    padding:4px 3px;
+    vertical-align:bottom;
+}
+
+/*==================================================
+  WRITING LINES
+==================================================*/
+
+td.line{
+
+    position:relative;
+
+    height:22px;
+
+    min-width:40px;
+
+}
+td.line input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+
+/*==================================================
+  LABELS
+==================================================*/
+
+.label{
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+}
+
+.num{
+
+    text-align:center;
+
+    font-weight:bold;
+
+    width:22px;
+
+}
+
+.small{
+
+    text-align:center;
+
+    font-size:9pt;
+
+}
+
+.checkbox{
+
+    text-align:center;
+
+    width:40px;
+
+}
+
+/*==================================================
+  INPUTS
+==================================================*/
+
+input[type="checkbox"]{
+
+    width:22px;
+
+    height:22px;
+
+    vertical-align:start;
+    position:relative;
+    bottom:2px;
+    
+
+}
+
+/*==================================================
+  SPACING
+==================================================*/
+
+h3{
+
+    margin-top:10px;
+    margin-bottom:8px;
+
+}
+
+p{
+
+    margin-bottom:6px;
+
+}
+
+.signature-table{
+
+    margin-top:12px;
+
+}
+
+.personal-table{
+
+    margin-top:8px;
+
+}
+
+.identification{
+
+    margin-top:14px;
+
+}
+
+.notice{
+
+    margin-top:10px;
+
+}
+
+.agency-table{
+
+    margin-top:8px;
+
+}
+
+.final-note{
+
+    margin-top:18px;
+
+}
+
+/*==================================================
+  PAGE BREAKS
+==================================================*/
+
+.page{
+
+    page-break-after:always;
+
+}
+
+.page:last-child{
+
+    page-break-after:auto;
+
+}
+
+table,
+section{
+
+    page-break-inside:avoid;
+
+}
+
+/*==================================================
+  PRINT
+==================================================*/
+
+@media print{
+
+    html,
+    body{
+
+        margin:0;
+        padding:0;
+        background:#fff;
+
+    }
+
+    .page{
+
+        width:210mm;
+        min-height:297mm;
+
+        margin:0;
+
+        padding:12mm 14mm 18mm;
+
+        box-shadow:none;
+
+    }
+
+}
+
+/*==================================================
+  PART 6 - FINAL PDF POLISH
+==================================================*/
+
+/* A4 Page */
+
+.page{
+
+    width:210mm;
+    min-height:297mm;
+
+    margin:10mm auto;
+
+    background:#fff;
+
+    padding:12mm 14mm 15mm;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/*--------------------------------------------------
+  Tables
+--------------------------------------------------*/
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+
+}
+
+td{
+
+    padding:4px 3px;
+    vertical-align:bottom;
+
+}
+
+/*--------------------------------------------------
+  Writing Lines
+--------------------------------------------------*/
+
+td.line{
+
+    position:relative;
+
+    height:20px;
+
+    min-width:40px;
+
+}
+td.line input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+/*--------------------------------------------------
+  Headings
+--------------------------------------------------*/
+
+h3{
+
+    font-size:12pt;
+
+    text-align:center;
+
+    margin:10px 0 8px;
+
+    font-weight:bold;
+
+    text-transform:uppercase;
+
+}
+
+.required-note{
+
+    text-align:center;
+
+    font-size:11pt;
+
+    font-weight:bold;
+
+    margin:16px 0;
+
+}
+
+/*--------------------------------------------------
+  Paragraphs
+--------------------------------------------------*/
+
+p{
+
+    font-size:10pt;
+
+    line-height:1.35;
+
+    text-align:justify;
+
+    margin-bottom:7px;
+
+}
+
+/*--------------------------------------------------
+  Checkboxes
+--------------------------------------------------*/
+
+input[type="checkbox"]{
+
+    width:11px;
+    height:11px;
+
+    vertical-align:middle;
+
+}
+
+/*--------------------------------------------------
+  Footer
+--------------------------------------------------*/
+
+.page-footer{
+
+    position:absolute;
+
+    bottom:8mm;
+
+    left:14mm;
+
+    right:14mm;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:9pt;
+
+}
+
+/*--------------------------------------------------
+  Prevent Splitting
+--------------------------------------------------*/
+
+.consent-section,
+.identification,
+.notice,
+.final-note,
+.signature-table,
+.personal-table,
+.identification-table,
+.other-id-table,
+.licence-table,
+.agency-table,
+.name-table{
+
+    page-break-inside:avoid;
+
+}
+
+/*--------------------------------------------------
+  Print
+--------------------------------------------------*/
+
+@page{
+
+    size:A4;
+
+    margin:8mm;
+
+}
+
+@media print{
+
+    html,
+    body{
+
+        margin:0;
+        padding:0;
+        background:#fff;
+
+    }
+
+    .page{
+
+        width:210mm;
+
+        min-height:297mm;
+
+        margin:0;
+
+        box-shadow:none;
+
+        page-break-after:always;
+
+    }
+
+    .page:last-child{
+
+        page-break-after:auto;
+
+    }
+
+}
+
+.logo img {
+    width: 250px;
+    height: auto;
+}
+
+td.small {
+    width: 60px;               /* increased so input fits */
+    border-bottom: 1px solid black;
+    padding: 2px;
+    vertical-align: bottom;
+}
+
+td.small span {
+    display: block;
+    font-size: 10px;
+    line-height: 10px;
+}
+
+.small-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    text-align: center;
+    background: transparent;
+}
+
+.error {
+  color: red;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+input.error-border {
+  border-bottom: 2px solid red !important;
+}

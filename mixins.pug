@@ -1,0 +1,145 @@
+//==================================================
+// HEADER
+//==================================================
+
+mixin header(page)
+
+  header.page-header
+
+    .header-top
+
+      .logo
+        // Replace with your logo image
+        img(src="/assests/logo.png", alt="Manitoba")
+
+      .title
+
+        h1 CRIMINAL RISK ASSESSMENT
+        h2 REQUEST
+
+    .header-info
+
+      .left
+        p
+          strong Criminal Risk Assessment Request
+
+      .right
+        p
+          | Revision date:
+          strong  2025-01-10
+          |  
+          strong= page
+
+    .department
+
+      p
+        strong MANITOBA FAMILIES - CRIMINAL RISK ASSESSMENT UNIT
+
+      p Child Protection Branch
+
+      p 201 - 114 Garry Street
+
+      p Winnipeg, Manitoba R3C 4V5
+
+
+
+//==================================================
+// FOOTER
+//==================================================
+
+mixin footer(page)
+
+  footer.page-footer
+
+    .footer-left
+      | Criminal Risk Assessment Request
+
+    .footer-center
+      | Revision date: 2025-01-10
+
+    .footer-right
+      = page
+
+
+
+//==================================================
+// BLANK LINE
+//==================================================
+
+mixin line(width='100%')
+
+  span.form-line(style=`width:${width}`)
+
+
+
+//==================================================
+// CHECKBOX
+//==================================================
+
+mixin checkbox(name,label)
+
+  label.checkbox
+
+    input(
+      type="checkbox"
+      name=name
+    )
+
+    span= label
+
+
+
+//==================================================
+// TEXT FIELD
+//==================================================
+
+mixin textField(label,name)
+
+  .form-row
+
+    label(for=name)= label
+
+    input(
+      type="text"
+      id=name
+      name=name
+    )
+
+
+
+//==================================================
+// DATE FIELD
+//==================================================
+
+mixin dateField(label,name)
+
+  .form-row
+
+    label(for=name)= label
+
+    input(
+      type="date"
+      id=name
+      name=name
+    )
+
+
+
+//==================================================
+// UNDERLINE CELL
+//==================================================
+
+mixin underlineCell()
+
+  td
+    .underline
+
+
+
+//==================================================
+// SECTION TITLE
+//==================================================
+
+mixin sectionTitle(title)
+
+  h3.section-title= title

@@ -1,0 +1,370 @@
+include mixins
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Criminal Risk Assessment Request
+    link(rel="stylesheet", href="/css/Criminal Risk Assessment.css")
+
+  body
+
+    //==================================================
+    // PAGE 1
+    //==================================================
+
+    .page
+
+      +header(1)
+
+      //==============================================
+      // CONSENT SECTION
+      //==============================================
+
+      section.consent-section
+
+        h3 CONSENT FOR CRIMINAL RISK ASSESSMENT AND RELEASE OF INFORMATION
+
+        p.
+          As a person who has, or may have, care, custody, control or charge of a child in receipt
+          of services under The Child and Family Services Act, I authorize the Criminal Risk
+          Assessment Unit of Manitoba Families' Child Protection Branch ("CRAU") to conduct
+          enquiries of the Winnipeg Police Service (WPS), the RCMP and other law enforcement
+          agencies necessary to assess the risk that I may endanger the life, health or emotional
+          wellbeing of a child.
+
+        p.
+          I understand that this information is requested by (CFS Agency) for the purposes of,
+          and in accordance with, s.18.4(1.1) of The Child and Family Services Act and may include
+          criminal records, convictions, Provincial Act offences, charges, non-conviction police
+          information and other law enforcement information.
+
+        p.
+          I authorize disclosure of this information to CRAU and an authorized Child and Family
+          Services Agency designate(s). I also authorize disclosure of my identifying information
+          to CRAU, WPS, RCMP and other law enforcement agencies for the purpose of completing
+          this Criminal Risk Assessment.
+
+        p.
+          I understand that the results of this Criminal Risk Assessment are confidential and may
+          not be provided directly to me but may be disclosed in accordance with Section 76 of
+          The Child and Family Services Act.
+
+        table.signature-table
+          tr
+            td.label Date:
+            td.line(colspan="3")
+              input(type="text" name="date")
+
+            td.label Signature of person being assessed:
+            td.line
+                input(type="text" name="signature")
+
+          tr
+            td(colspan="2")
+
+            td.label Unconsented Witness (if consenting):
+            td.line
+              input(type="text" name="witness")
+
+      //==============================================
+      // PERSONAL INFORMATION
+      //==============================================
+
+      h3.print-title PLEASE PRINT CLEARLY
+
+      table.personal-table
+
+        tr
+          td.num 1.
+          td.label FIRST NAME:
+          td.line(colapan="3")
+            input(type="text" name="first_name")
+          
+
+        
+            td.num.second-name 2.
+            td.label.second-name SECOND NAME:
+            
+              input(type="text" name="second_name")
+            td.line.second-name(colspan="3")
+
+        tr
+          td.num 3.
+          td.label LAST NAME:
+          td.line(colspan="3")
+             input(type="text" name="last_name")
+
+        tr
+          td.num 4.
+          td.label DATE OF BIRTH:
+
+          td.small Day
+          td.small Month
+          td.small Year
+          
+
+          td.num 5.
+          td.label MALE
+
+          td.checkbox
+            input(type="checkbox" name="gender_male")
+
+          td.label FEMALE
+
+          td.checkbox
+            input(type="checkbox" name="gender_female")
+
+      
+
+        tr
+          td.num 6.
+          td.label OTHER LAST NAMES USED:
+          td.line(colspan="7")
+              input(type="text" name="other_last_names")
+
+
+        tr
+          td.num 7.
+          td.label OTHER FIRST NAMES USED / ALSO GOES BY:
+          td.line(colspan="7")
+            input(type="text" name="other_first_names")
+
+        tr
+          td.num 8.
+          td.label CURRENT ADDRESS (include postal code):
+          td.line(colspan="7")
+            input(type="text" name="address")
+
+        tr
+          td.num 9.
+          td.label CURRENT PH#s:
+          td.line(colspan="7")
+             input(type="text" name="phone")
+
+        tr
+          td.num 10.
+          td.label City / Province or Country of Birth:
+          td.line(colspan="7")
+            input(type="text" name="birth_place")
+
+             
+
+      section.identification
+
+        p.note
+          strong
+            | *PLEASE NOTE:
+          |  Subject's name must be identified with TWO PIECES OF IDENTIFICATION
+          |  (MB Driver's Licence & Photo ID is preferable)   
+        
+            
+
+        table.identification-table
+
+          tr
+            td
+              label
+                input(type="checkbox" name="birth_certificate")
+                | Birth Certificate
+
+            td
+              label
+                input(type="checkbox" name="social_insurance_card")
+                | Social Insurance Card
+
+            td
+              label
+                input(type="checkbox" name="health_card")
+                | Manitoba Health Card
+
+            td
+              label
+                input(type="checkbox" name="treaty_card")
+                | Treaty Card
+
+        table.other-id-table
+
+          tr
+            td.label Other (specify ID):
+
+            td.line
+
+        table.licence-table
+
+          tr
+            td.label
+              | MB Driver's License with Photo -
+              | licence number (section 4d on licence):
+            td.line 
+              input(type="text" name="licence_number")
+
+            
+
+      +footer(1)
+
+    //==================================================
+    // PAGE 2
+    //==================================================
+
+    .page
+
+      +header(2)
+
+      table.name-table
+
+        tr
+          td.label
+            strong NAME OF PERSON BEING ASSESSED:
+
+          td
+              input(type="text" name="person_name")
+
+      p.small-note
+        | * match information on page 1
+
+      section.notice
+
+        p.
+          IT IS IMPORTANT THAT THE CFS AGENCY DESIGNATE READS AND UNDERSTANDS
+          THE FOLLOWING:
+
+        p.
+          The identifying information supplied on page 1 will be researched
+          through the Canadian Police Information Centre (CPIC) and Winnipeg
+          Police Service Records Management System (NICHE). The research will
+          NOT include a vulnerable sector search or information in respect of
+          pardons, which information may impact the results of a risk assessment.
+
+        p.
+          Criminal Convictions are strictly confidential and cannot be shared
+          without written authorization of the person involved. Personal
+          Information is governed under Section 8 of the Privacy Act (Federal
+          Statute).
+
+        p.
+          PLEASE NOTE that record information is based on NAME AND DATE OF
+          BIRTH SEARCH ONLY and does not necessarily indicate subject
+          involvement.
+
+        p.
+          Verification can only be provided through the submission of
+          fingerprints to the local law enforcement agency for the area in
+          which the person being assessed resides.
+
+        p.
+          In the case of dispute regarding the identity of the person being
+          assessed, that person is advised to attend any RCMP Detachment,
+          Winnipeg Police Service, Brandon Police Service, or local Police
+          Agency. A fee for service is required.
+
+      h3.required-note
+        NOTE – SECTIONS MARKED WITH AN ASTERISK (*) ARE REQUIRED
+
+
+              //==============================================
+      // AGENCY INFORMATION
+      //==============================================
+
+      table.agency-table
+
+        tr
+          td.label
+            strong *NAME OF AGENCY SUBMITTING REQUEST:
+
+          td.line
+            input(type="text" name="witness")
+
+        tr
+          td.label
+            strong *REASON FOR RISK ASSESSMENT:
+
+          td
+
+            .checkbox-row
+
+              label
+                input(type="checkbox" name="with_consent")
+                | With Consent
+
+              label
+                input(type="checkbox" name="without_consent")
+                | Without Consent
+
+            .checkbox-row
+
+              label
+                input(type="checkbox" name="child_protection")
+                | Child Protection Concerns
+
+              label
+                input(type="checkbox" name="place_of_safety")
+                | Place of Safety
+
+              label
+                input(type="checkbox" name="kinship")
+                | Kinship or Customary Care Agreement
+
+        tr
+          td.label
+            strong *ASSIGNED WORKER:
+
+          td.line
+            input(type="text")
+
+        tr
+          td.label
+            | DATE OF LAST CRIMINAL RISK ASSESSMENT (if known):
+
+          td.line
+             input(type="text")
+
+        tr
+          td.label
+            strong *SUBMITTING DESIGNATE:
+
+          td.line
+             input(type="text")
+
+        tr
+          td.label
+            strong *DESIGNATE PH#:
+
+          td.line
+             input(type="text")
+
+        tr
+          td.label
+            strong *DESIGNATE EMAIL#:
+
+          td.line
+             input(type="text")
+
+        tr
+          td.label
+            | DESIGNATE FAX#
+
+          td.line
+             input(type="text")
+
+        tr
+          td.label
+            strong *REQUEST DATE:
+
+          td.line
+             input(type="text")
+
+      //==============================================
+      // FINAL NOTE
+      //==============================================
+
+      section.final-note
+
+        p.
+          NOTE: The assessment completed by the Criminal Risk Assessment Unit
+          of the Department of Families Child Protection Branch does not replace
+          a criminal records check.
+
+      +footer(2)
+
+      <script src="/js/Criminal Risk Assessment.js"></script>

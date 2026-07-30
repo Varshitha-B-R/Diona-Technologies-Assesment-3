@@ -1,0 +1,169 @@
+Prompt 1 — PDF Understanding 
+
+Think You are an expert in document analysis.
+
+I will provide a PDF form. Your task is to deeply analyze and extract its full structure.
+
+Output must be in structured JSON format with:
+1. Sections (Header, Body, Tables, Footer)
+2. Each field with:
+   - label
+   - type (text, date, checkbox, dropdown, number)
+   - required (true/false)
+   - placeholder/example value
+3. Table structures:
+   - column headers
+   - row format
+4. Layout hints:
+   - alignment (left/right/center)
+   - grouping of fields
+
+Example Output:
+{
+  "header": {
+    "title": "Worker Progress Report",
+    "fields": [
+      { "label": "Worker Name", "type": "text", "required": true }
+    ]
+  },
+  "sections": [
+    {
+      "name": "Recovery",
+      "fields": [
+        { "label": "Pain Scale", "type": "number", "range": "1-10" }
+      ]
+    }
+  ]
+}
+
+Do not skip any field. Preserve exact labels from PDF.
+
+--------------------------------------------------------------
+Prompt 2 — Convert to ODK XLSForm
+Using the extracted JSON structure, generate a complete ODK XLSForm.
+
+Requirements:
+- Create 3 sheets:
+  1. survey
+  2. choices
+  3. settings
+
+Rules:
+- Use begin_group / end_group for sections
+- Use select_one / select_multiple for options
+- Add constraints where applicable
+- Add relevant hints
+
+Example:
+survey sheet:
+| type        | name        | label              | required |
+|-------------|-------------|--------------------|----------|
+| text        | worker_name | Worker Name        | yes      |
+| integer     | pain_scale  | Pain Scale (1-10)  | yes      |
+
+choices sheet:
+| list_name | name | label |
+|-----------|------|-------|
+| yes_no    | yes  | Yes   |
+| yes_no    | no   | No    |
+
+Ensure naming is clean and follows snake_case.
+
+-----------------------------------------------------
+Prompt 3 — Convert XLSForm to Dynamic JSON (Frontend Ready)
+Convert the XLSForm into a JavaScript-friendly JSON dataset.
+
+Requirements:
+- Maintain grouping
+- Include labels and values
+- Provide 2 different datasets (simulate backend)
+
+Example:
+{
+  "dataset1": {
+    "worker_name": "John Doe",
+    "pain_scale": 5
+  },
+  "dataset2": {
+    "worker_name": "Jane Smith",
+    "pain_scale": 8
+  }
+}
+
+Ensure realistic sample data.
+------------------------------------------------
+
+Prompt 4 — Generate Pug Template (Pixel Accurate)
+Generate a Pug template that exactly replicates the PDF layout.
+
+Requirements:
+- Page size: A4 (210mm x 297mm)
+- Header with logo + address
+- Sections rendered dynamically
+- Tables using loops
+- Footer fixed at bottom
+- Page numbering: "Page X of Y"
+
+Use mixins for:
+- header
+- section blocks
+- tables
+- footer
+
+Example snippet:
+mixin field(label, value)
+  .field
+    span.label= label
+    span.value= value
+
+Do NOT hardcode values. Use variables from JSON.
+-----------------------------------------------
+
+Prompt 5 — CSS for Print-Perfect Layout
+Generate CSS for the Pug template.
+
+Constraints:
+- A4 print layout
+- No overflow
+- Use mm units (not px where possible)
+- Footer always at bottom
+- Tables must match PDF borders
+- Font: Times New Roman
+
+Example:
+.page {
+  width: 210mm;
+  height: 297mm;
+  padding: 15mm;
+}
+
+.footer {
+  position: absolute;
+  bottom: 10mm;
+}
+
+Ensure print compatibility using @media print.
+---------------------------------------------
+
+ Prompt 6 — JavaScript for Dynamic Rendering
+Write vanilla JavaScript to:
+
+1. Load 2 datasets
+2. Render Pug template dynamically
+3. Switch datasets on button click
+4. Reset to first page on switch
+5. Generate page numbers dynamically
+
+Example:
+let currentDataset = dataset1;
+
+function switchData() {
+  currentDataset = (currentDataset === dataset1) ? dataset2 : dataset1;
+  render();
+}
+
+function render() {
+  // compile pug and inject into DOM
+}
+
+No frameworks allowed.
